@@ -1,6 +1,6 @@
-﻿namespace cashboxNet
+namespace cashboxNet
 {
-  public class Cashbox
-  {
-  }
+    public class Cashbox
+    {
+    }
 }

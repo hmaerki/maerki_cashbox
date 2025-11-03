@@ -145,6 +145,19 @@
 			],
 			"group": "build",
 			"problemMatcher": []
+		},
+		{
+			"label": "cashbox format",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"format",
+				"${workspaceFolder}/cashboxNet.csproj",
+				"--verbosity",
+				"detailed"
+			],
+			"group": "build",
+			"problemMatcher": []
 		}
 	]
 }
