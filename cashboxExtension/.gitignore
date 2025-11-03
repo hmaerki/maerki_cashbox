@@ -4,7 +4,7 @@ npm-debug.log*
 
 # Build output
 out/
-*.vsix
+# *.vsix
 
 # Development
 .env

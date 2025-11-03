@@ -41,13 +41,14 @@ function getOrCreateCashboxTerminal(cwd: string): vscode.Terminal {
         // Terminal is still active, return it
         return cashboxTerminal;
     }
-    
+
     // Create a new terminal
     cashboxTerminal = vscode.window.createTerminal({
         name: 'Cashbox Run',
-        cwd: cwd
+        cwd: cwd,
+        shellPath: 'bash'  // or '/bin/bash' on Linux/macOS
     });
-    
+
     return cashboxTerminal;
 }
 
@@ -59,42 +60,38 @@ function runCashboxCommandCommon(args: string) {
         vscode.window.showErrorMessage(err);
     }
 
+    const filename_cashbox_journal = "cashbox_journal.muh2";
+
     // Check if the active file is cashbox_journal.muh2
     const activeEditor = vscode.window.activeTextEditor;
     if (!activeEditor) {
-        error_msg('No active editor found. Expect "cashbox_journal.muh2" to be the topmost window.');
+        error_msg(`No active editor found. Expect "${filename_cashbox_journal}" to be the topmost window.`);
         return;
     }
 
     const activeFileName = path.basename(activeEditor.document.uri.fsPath);
     outputChannel.appendLine(`DEBUG: activeFileName=${activeFileName}`);
-    if (activeFileName !== 'cashbox_journal.muh2') {
-        error_msg(`Expect 'cashbox_journal.muh2' as topmost window!`);
+    if (activeFileName !== filename_cashbox_journal) {
+        error_msg(`Expect "${filename_cashbox_journal}" as topmost window!`);
         return;
     }
 
-    // Retrieve cashbox binary and arguments
-    // Retrieve the path to the cashbox binary from a file called 'cashbox_run.path'
-    const cashbox_run_path = 'cashbox_run.path';
+    // Retrieve cashbox binary and arguments.
+    // Retrieve the path to the cashbox binary from a environment variable 'CASHBOX_BINARY'.
+    let cashbox_binary = "../../../maerki_cashbox";
+    // Check for environment variable first
+    if (process.env.CASHBOX_BINARY) {
+        cashbox_binary = process.env.CASHBOX_BINARY;
+        outputChannel.appendLine(`DEBUG: Using CASHBOX_BINARY from environment: ${cashbox_binary}`);
+    } else {
+        outputChannel.appendLine(`DEBUG: CASHBOX_BINARY environment variable not set, using default: ${cashbox_binary}`);
+    }
+
     const cwd = path.dirname(activeEditor.document.uri.fsPath);
-    outputChannel.appendLine(`DEBUG: cwd=${cwd}`);
-    const cashboxFilePath = path.join(cwd, cashbox_run_path);
-    outputChannel.appendLine(`DEBUG: cashboxFilePath=${cashboxFilePath}`);
-    if (!fs.existsSync(cashboxFilePath)) {
-        error_msg(`${cashboxFilePath}: Does not exist!`);
+    let filename_cashbox_journal_full = path.join(cwd, filename_cashbox_journal);
+    if (!fs.existsSync(filename_cashbox_journal_full)) {
+        error_msg(`${filename_cashbox_journal_full}: Does not exist!`);
         return;
-    }
-
-    let cashbox_binary: string;
-    try {
-        cashbox_binary = fs.readFileSync(cashboxFilePath, 'utf8').trim();
-    } catch (error) {
-        error_msg(`Failed to read ${cashboxFilePath}: ${error}`);
-        return;
-    }
-    outputChannel.appendLine(`DEBUG: cashboxFilePath=${cashboxFilePath} contains: cashbox_binary=${cashbox_binary}`);
-    if (process.platform === 'win32' && !cashbox_binary.endsWith('.exe')) {
-        cashbox_binary += '.exe';
     }
     let cashbox_binary_full = cashbox_binary;
     if (cashbox_binary.startsWith('.')) {
@@ -102,14 +99,15 @@ function runCashboxCommandCommon(args: string) {
     }
     outputChannel.appendLine(`DEBUG: cashbox_binary_full=${cashbox_binary_full}`);
     if (!fs.existsSync(cashbox_binary_full)) {
-        error_msg(`${cashbox_binary_full}: Does not exist! (Read from file "${cashbox_run_path}")`);
+        error_msg(`${cashbox_binary_full}: Does not exist!`);
         return;
     }
-    const cmd = `${cashbox_binary_full} ${args}`;
+    const cmd = `dotnet '${cashbox_binary_full}/cashboxNet/bin/Debug/net9.0/cashboxNet.dll' ${args}`;
     outputChannel.appendLine(`DEBUG: cmd=${cmd}`);
 
     // Get or create terminal and run cashbox
     const terminal = getOrCreateCashboxTerminal(cwd);
+    terminal.sendText(`cd '${cwd}'`);
     terminal.sendText(cmd);
     terminal.show();
 
@@ -117,7 +115,7 @@ function runCashboxCommandCommon(args: string) {
     // vscode.window.showInformationMessage('Cashbox run command started in terminal');
 }
 function runCashboxCommand() {
-    runCashboxCommandCommon("--tags --txt --html")
+    runCashboxCommandCommon("--tags --html")
 }
 
 function generatePdfCommand() {

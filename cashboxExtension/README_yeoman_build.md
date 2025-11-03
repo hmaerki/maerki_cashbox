@@ -1,3 +1,8 @@
+# Notes done when using yeoman template generator
+
+Note that this page is archived and not updated anymore.
+
+## Run yeoman template generator
 
 ```bash
 docker build -t yeoman .
@@ -42,7 +47,7 @@ Your extension muh2 has been created!
 
 To start editing with Visual Studio Code, use the following commands:
 
-     code muh2
+     code cashbox_journal.muh2
 
 Open vsc-extension-quickstart.md inside the new extension for further instructions
 on how to modify, test and publish your extension.
@@ -100,7 +105,7 @@ For more information, also visit http://code.visualstudio.com and follow us @cod
    npm install
    npm run compile
    npx @vscode/vsce package
-   code --install-extension muh2-0.0.1.vsix
+   code --force --install-extension muh2-0.0.1.vsix
    ```
 
 2. **Or use the VS Code command line:**
