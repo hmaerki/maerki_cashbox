@@ -87,7 +87,7 @@ namespace cashboxNet
             Journal journal = new Journal(config);
 
             // Load the journal from the file
-            Console.WriteLine("Read Muh-File...");
+            Console.WriteLine($"Read {MuhFile.FILENAME}...");
             journal.Muh2FileRead();
 
             // Read the buchen-directory into the journal
