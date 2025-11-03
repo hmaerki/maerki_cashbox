@@ -1,0 +1,86 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Cashbox muh2",
+	"patterns": [
+		{
+			"include": "#errors"
+		},
+		{
+			"include": "#journal-entries"
+		},
+		{
+			"include": "#comment-vorschlag"
+		},
+		{
+			"include": "#comment-normal"
+		}
+	],
+	"repository": {
+		"errors": {
+			"patterns": [
+				{
+					"name": "invalid.illegal.error.muh2",
+					"match": "^fehler\\b.*$"
+				}
+			]
+		},
+		"journal-entries": {
+			"patterns": [
+				{
+					"match": "^(\\d{4}-\\d{2}-\\d{2}\\w+)\\s+(b|f|vorschlag)\\s+(-?\\d+\\.\\d+)\\s+([a-zA-Z_-]+)\\s+(.*)$",
+					"captures": {
+						"1": {
+							"name": "entity.name.function.muh2"
+						},
+						"2": {
+							"patterns": [
+								{
+									"match": "(vorschlag)",
+									"captures": {
+										"1": {
+											"name": "keyword.other.todo.muh2"
+										}
+									}
+								}
+,								{
+									"match": "(\\w+)",
+									"captures": {
+										"1": {
+											"name": "string.unquoted.description.muh2"
+										}
+									}
+								}
+							]
+						},
+						"3": {
+							"name": "constant.numeric.float.muh2"
+						},
+						"4": {
+							"name": "entity.name.function.muh2"
+						},
+						"5": {
+							"name": "string.unquoted.description.muh2"
+						}
+					}
+				}
+			]
+		},
+		"comment-vorschlag": {
+			"patterns": [
+				{
+					"name": "keyword.other.todo.muh2",
+					"match": "# vorschlag: .*$"
+				}
+			]
+		},
+		"comment-normal": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.muh2",
+					"match": "#.*$"
+				}
+			]
+		}
+	},
+	"scopeName": "source.muh2"
+}

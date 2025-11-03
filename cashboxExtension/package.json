@@ -1,0 +1,75 @@
+{
+  "name": "muh2",
+  "displayName": "muh2",
+  "description": "Cashbox muh2",
+  "version": "0.0.1",
+  "publisher": "hmaerki",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hmaerki/maerki_util_cashbox_muh2.git"
+  },
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cashbox.run",
+        "title": "Cashbox: Run"
+      },
+      {
+        "command": "cashbox.pdf",
+        "title": "Cashbox: Generate PDF"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cashbox.run",
+        "key": "shift+ctrl+c",
+        "mac": "shift+cmd+c"
+      },
+      {
+        "command": "cashbox.pdf",
+        "key": "shift+ctrl+p",
+        "mac": "shift+cmd+p"
+      }
+    ],
+    "languages": [
+      {
+        "id": "muh2",
+        "aliases": [
+          "Cashbox muh2",
+          "muh2"
+        ],
+        "extensions": [
+          ".muh2"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "muh2",
+        "scopeName": "source.muh2",
+        "path": "./syntaxes/muh2.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.105.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@vscode/vsce": "^3.6.2"
+  }
+}

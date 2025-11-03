@@ -1,0 +1,11 @@
+fehler Die Eröffnungsbilanz weist einen Fehler von -2’788.13 auf, sollte aber 0 sein!
+# journal_raiffeisen_hans.xml: Einkauf TWINT COOP TS WETZIKON
+2025-01-03a b 3.95 privat Einkauf TWINT COOP TS WETZIKON
+# journal_raiffeisen_hans.xml: Hans Maerki
+2025-01-03bc b -2086.92 privat Kontoübertrag TKB
+# account-statement_2025-01-01_2025-09-04_en-us_b2a27e.csv(7):Card Payment/COMPLETED/CHF -5.57: AliExpress
+2025-01-04b f 5.57 verbrauchhw-keineMWST-revolut_hans_chf Kabelbinder.pdf
+# vorschlag: journal_raiffeisen_hans.xml: Greenpeace Schweiz
+2025-01-28c vorschlag 602.00 privat Greenpeace Schweiz
+# account-statement_2025-01-01_2025-09-04_en-us_b2a27e.csv(16):Card Payment/COMPLETED/CHF -22.55: AliExpress
+2025-01-28d f 22.55 verbrauchhw-keineMWST-revolut_hans_chf 2 USB Cams to be mounted on octoprobe tentacle.pdf

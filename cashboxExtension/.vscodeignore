@@ -1,0 +1,14 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+vsc-extension-quickstart.md
+node_modules/**
+src/**
+tsconfig.json
+.github/**
+README_hans.md
+test.py
+install.sh
+*.vsix
+example/**
+maerki_util_cashbox_muh2.code-workspace
