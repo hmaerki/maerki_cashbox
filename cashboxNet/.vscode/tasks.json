@@ -1,0 +1,150 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "cashbox build debug",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"${workspaceFolder}/cashboxNet.csproj",
+				"--configuration",
+				"Debug"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "cashbox clean",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"clean",
+				"${workspaceFolder}/cashboxNet.csproj"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "cashbox test",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"test",
+				"${workspaceFolder}/cashboxNet.csproj",
+				"--logger:console;verbosity=normal"
+			],
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"dependsOn": "cashbox build debug"
+		},
+		{
+			"label": "cashbox test (verbose)",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"test",
+				"${workspaceFolder}/cashboxNet.csproj",
+				"--logger:console;verbosity=detailed"
+			],
+			"group": "test",
+			"problemMatcher": [],
+			"dependsOn": "cashbox build debug"
+		},
+		{
+			"label": "cashbox clean publish linux-x64",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-c",
+				"cd ${workspaceFolder}/cashboxNet && rm -rf bin/ obj/ && dotnet publish cashboxNet.csproj --configuration Release --runtime linux-x64 --self-contained false --output bin/publish/linux-x64 && cd bin/publish/linux-x64 && tar -czf ../cashboxNet-linux-x64.tar.gz --exclude='*.pdb' *"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "cashbox publish linux-x64 framework-bundle",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-c",
+				"cd ${workspaceFolder}/cashboxNet && rm -rf bin/ obj/ && dotnet publish cashboxNet.csproj --configuration Release --runtime linux-x64 --self-contained false --output bin/publish-bundle/linux-x64 && cd bin/publish-bundle && echo '#!/bin/bash\ncd \"$(dirname \"$0\")\"/linux-x64 && ./cashboxNet \"$@\"' > cashboxNet && chmod +x cashboxNet && tar -czf cashboxNet-linux-x64-bundle.tar.gz --exclude='*.pdb' cashboxNet linux-x64/"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "cashbox publish linux-x64",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"publish",
+				"${workspaceFolder}/cashboxNet.csproj",
+				"--configuration",
+				"Release",
+				"--runtime",
+				"linux-x64",
+				"--self-contained",
+				"false",
+				"--output",
+				"${workspaceFolder}/cashboxNet/bin/publish/linux-x64"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"dependsOn": "cashbox clean"
+		},
+		{
+			"label": "cashbox publish win-x64",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"publish",
+				"${workspaceFolder}/cashboxNet.csproj",
+				"--configuration",
+				"Release",
+				"--runtime",
+				"win-x64",
+				"--self-contained",
+				"false",
+				"--output",
+				"${workspaceFolder}/cashboxNet/bin/publish/win-x64"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "cashbox publish linux-x64 self-contained",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-c",
+				"cd ${workspaceFolder}/cashboxNet && rm -rf bin/ obj/ && dotnet publish cashboxNet.csproj --configuration Release --runtime linux-x64 --self-contained true --output bin/publish-selfcontained/linux-x64 && cd bin/publish-selfcontained/linux-x64 && tar -czf ../cashboxNet-linux-x64-selfcontained.tar.gz --exclude='*.pdb' *"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "cashbox publish win-x64 self-contained",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-c",
+				"cd ${workspaceFolder}/cashboxNet && rm -rf bin/ obj/ && dotnet publish cashboxNet.csproj --configuration Release --runtime win-x64 --self-contained true --output bin/publish-selfcontained/win-x64 && cd bin/publish-selfcontained/win-x64 && zip -r ../cashboxNet-win-x64-selfcontained.zip . -x '*.pdb'"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "cashbox publish linux-x64 single-file (NOT WORKING - CS-Script incompatible)",
+			"type": "shell",
+			"command": "echo",
+			"args": [
+				"Single-file deployment is incompatible with CS-Script. Use 'cashbox publish linux-x64 framework-bundle' instead."
+			],
+			"group": "build",
+			"problemMatcher": []
+		}
+	]
+}

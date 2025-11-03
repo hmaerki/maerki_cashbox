@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"ms-dotnettools.csharp",
+			"ms-dotnettools.csdevkit"
+		]
+	},
+	"settings": {}
+}

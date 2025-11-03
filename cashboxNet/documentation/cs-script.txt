@@ -1,0 +1,3 @@
+https://www.codeproject.com/Articles/694248/Sharpening-Notepadplusplus
+http://www.csscript.net/help/Online/indexTutorial.html
+https://github.com/oleg-shilo/cs-script/wiki/Home

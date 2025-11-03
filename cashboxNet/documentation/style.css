@@ -1,0 +1,40 @@
+/*  common styles  */
+/* The color #336699 is the zulu-specific blue. */
+body {font-family: Arial; color: #000000; margin: 1px}
+code {font-family: "Courier New", Courier, mono; color: #336699}
+pre  {font-family: "Courier New", Courier, mono;
+      color: black; background-color: #eeeeee;
+	   border: 1pt solid; border-color: #336699; width: 0;
+	   padding-right: 7pt; padding-left: 7pt; padding-top: 7pt; padding-bottom: 7pt;
+	   overflow: auto; width: auto; white-space: pre; }
+p    {font-size: 10pt}
+tr   {font-size: 10pt}
+h1, h2, h3, h4 {font-weight: bold; color: #336699}
+h1   {margin-top: 7px; margin-bottom: 5px; font-size: 160%}
+h2   {margin-top: 7px; margin-bottom: 4px; font-size: 130%}
+h3   {margin-top: 7px; margin-bottom: 4px; font-size: 120%}
+h4   {margin-top: 7px; margin-bottom: 4px; font-size: 120%}
+td   {}
+li   {}
+ul   {margin-top: 2px; margin-bottom: 2px}
+ol   {margin-top: 2px; margin-bottom: 2px}
+hr   {color: #336699; height: 1px}
+b    {color: #336699}
+img  {border: none}
+a          {color: #336699}
+a:hover    {color: #000077}
+a:visited  {color: #996699}
+ 
+/* Styles used in the template only */
+td.td_header_left   {border-top: 2px solid #336699; border-right: 2px solid #336699}
+td.td_footer_left   {border-bottom: 2px solid #336699; border-right: 2px solid #336699}
+td.td_header_footer {border-top: 2px solid #336699; border-bottom: 2px solid #336699; font-size: 80%}
+td.td_header_footer a         {color: black; TEXT-DECORATION: none}
+td.td_header_footer a:hover   {color: black; TEXT-DECORATION: none}
+td.td_header_footer a:visited {color: black; TEXT-DECORATION: none}
+/*  Styles used for the navigation-menu on the left side */
+td.td_menu              {color: #336699; font-weight: bold; white-space: nowrap}
+td.td_menu a            {color: #000000; font-weight: normal}
+td.td_menu a:hover      {color: #336699}
+td.td_menu a:visited    {color: #000000}
+td.td_menu span.fixed   {color: #336699; font-family: "Courier New", Courier, mono; font-weight: bold}

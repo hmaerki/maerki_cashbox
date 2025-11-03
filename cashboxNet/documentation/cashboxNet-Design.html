@@ -1,0 +1,148 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Cashbox</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+
+<body>
+<h1>Parser des Muh-Files</h1>
+  <ul>
+    <li>Zeile beginnt mit Verb "todo", "fehler", "#".
+      <ul>
+        <li>"todo", "fehler": Die Zeile wird ignoriert</li>
+        <li>"#": Die Zeile ist Kommentar.</li>
+      </ul>
+    </li>
+    <li>Zeile beignnt mit &lt;Referenz&gt;.
+      <ul>
+        <li>Parsen nach "2017-01-06a b 534.70 auto-FAHRZEUG Haftpflichtversicherung 2017": {referenz} {verb} {betrag} {buchungsanweisung} {kommentar}</li>
+        <li>"b": Buchung</li>
+        <li>"f": File wird ignoriert.</li>
+      </ul>
+    </li>
+  </ul>
+  
+  <h1>&nbsp;</h1>
+  <h1>Big Picture</h1>
+
+  <h1>Anatomie einer Buchungszeile</h1>
+  <table cellspacing="0">
+    <thead>
+      <tr>
+        <th>Bezeichner</th>
+        <th>Regexp</th>
+        <th>Beispiel und Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Datum</td>
+        <td>\d\d\d\d-\d\d-\d\d</td>
+        <td>2017-08-12</td>
+      </tr>
+      <tr>
+        <td>Referenz
+        </td>
+        <td>&lt;Datum&gt;([a-z]+)([0-9]*)</td>
+        <td>2017-08-12a<br />
+          2017-08-12ab<br />
+          2017-08-12a1<br />
+          a-z: Hauptbelege<br />
+          1-9: Unterbelege     
+      </tr>
+      <tr>
+        <td>Betrag</td>
+        <td>(-?)(\d+).(\d\d)</td>
+        <td>12.30<br />
+          -12.30
+      </tr>
+      <tr>
+        <td>Buchungsanweisung
+        </td>
+        <td>&lt;HabenSoll&gt;(-Option)*</td>
+        <td>
+        auto-bar-SPESEN_HUBA
+      </tr>
+      <tr>
+        <td>HabenSoll</td>
+        <td>Vorlagebuchung<br />
+          |<br />
+          &lt;Haben&gt;-&lt;Soll&gt;</td>
+        <td>auto<br />
+          <br />
+          1021-3000
+      </tr>
+      <tr>
+        <td>Haben</td>
+        <td>\d+</td>
+        <td>
+        1021
+      </tr>
+      <tr>
+        <td>Soll</td>
+        <td>\d+</td>
+        <td>
+        3000
+      </tr>
+      <tr>
+        <td>Vorlagebuchung</td>
+        <td>[a-z][a-zA-Z]*</td>
+        <td>
+        auto
+      </tr>
+      <tr>
+        <td>Option</td>
+        <td>Buchungsoption<br />
+          |<br />
+          Gegenkonto<br />
+          |<br />
+          Tag</td>
+        <td>ohneMwst<br />
+          <br />
+          2400<br />
+          <br />
+          SPESEN_HUBA
+      </tr>
+      <tr>
+        <td>Buchungsoption</td>
+        <td>[a-z]([a-zA-Z_])*</td>
+        <td>
+        ohneMwst, zkb
+      </tr>
+      <tr>
+        <td>Tag</td>
+        <td>[A-Z]([A-Z_])*</td>
+        <td>
+        ARZTHANS, SPESEN_HUBA
+      </tr>
+      <tr>
+        <td>Kommentar</td>
+        <td></td>
+        <td>
+        Irgendetwas. Alles innerhalb {} wird versteckt.
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>
+      </tr>
+      <tr>
+        <td>Komplette Zeilen</td>
+        <td></td>
+        <td>
+      </tr>
+      <tr>
+        <td>Buchung</td>
+        <td>&lt;Referenz&gt; b &lt;Betrag&gt; &lt;Buchungsanweisung&gt; &lt;Kommentar&gt;</td>
+        <td>
+        2017-08-12ab b 12.30 auto-bar-SPESEN_HUBA Benzin
+      </tr>
+      <tr>
+        <td>File</td>
+        <td>Wie Buchung aber mit 'f'</td>
+        <td>
+      </tr>
+    </thead>
+  </table>
+</body>
+</html>

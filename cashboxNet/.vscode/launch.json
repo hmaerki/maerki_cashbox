@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "cashboxNet 2025",
+            "type": "coreclr",
+            "request": "launch",
+            "args": [
+                "--tags",
+                "--txt",
+                "--html",
+                "--pdf",
+                "--timestamp=2000-01-01 00:00:00"
+            ],
+            "cwd": "${workspaceFolder}/maerki_informatik/2025",
+            "program": "${workspaceFolder}/cashboxNet/bin/Debug/net9.0/cashboxNet.dll",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "preLaunchTask": "cashbox build debug",
+            "requireExactSource": false,
+            "justMyCode": false
+        },
+        {
+            "name": "cashboxNet",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/cashboxNet/cashboxNet.csproj",
+            "launchConfigurationId": "TargetFramework=;cashboxNet"
+        },
+        {
+            "name": "NUnit Tests",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dotnet",
+            "args": [
+                "test",
+                "${workspaceFolder}/cashboxNet/cashboxNet.csproj",
+                "--logger:console;verbosity=detailed"
+            ],
+            "cwd": "${workspaceFolder}/cashboxNet",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "preLaunchTask": "cashbox build debug",
+            "justMyCode": false
+        }
+    ]
+}
