@@ -144,11 +144,11 @@ namespace cashboxNet
         {
             foreach (string todo in MessagesTodo)
             {
-                fs.WriteLine($"{RegexBeginBasic.VERB_TODO} N�chste Zeile: {todo}");
+                fs.WriteLine($"{RegexBeginBasic.VERB_TODO} Nächste Zeile: {todo}");
             }
             foreach (string error in MessagesErrors)
             {
-                fs.WriteLine($"{RegexBeginBasic.VERB_FEHLER} N�chste Zeile: {error}");
+                fs.WriteLine($"{RegexBeginBasic.VERB_FEHLER} Nächste Zeile: {error}");
             }
             foreach (string comment in MessagesComments)
             {

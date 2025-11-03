@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Cashbox</title>
-  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
   <style type="text/css">
     th   {border: 1px solid grey; padding: 4px}
@@ -14,7 +14,7 @@
   <h2>Begriffe</h2>
   <ul>
     <li>Valuta: <code>2017-03-03</code>. Das Valuta-Datum</li>
-    <li>Referenz: <code>2017-03-03c</code>. Statt einer Buchungsnummer wird eine Referenz verwendet. Die Referenz besteht aus dem Valuta-Datum und einem oder mehreren Buchstaben. Eine Buchung ist immer eindeutig über die Referenz identifizierbar.</li>
+    <li>Referenz: <code>2017-03-03c</code>. Statt einer Buchungsnummer wird eine Referenz verwendet. Die Referenz besteht aus dem Valuta-Datum und einem oder mehreren Buchstaben. Eine Buchung ist immer eindeutig Ã¼ber die Referenz identifizierbar.</li>
     <li>Buchung: Eine Buchung besteht aus Valuta-Datum, Betrag und Haben/Soll-Konten, Mwst, Kommentar und Beleg.</li>
     <li>Buchungsanweisungen: <code></code>Oder einfach <i>Anweisungen</i>.</li>
     <li>Versteckt: <i>Versteckte</i> Informationen wird bewusst nicht im PDF-Report ausgegeben.</li>
@@ -23,34 +23,34 @@
   <h2>Buchungszeilen</h2>
   <h3>Kommentar: <code>#</code></h3>
   <pre># journal_zkb.csv(381): STRASSENVERKEHRSAMT DES KANTONS ZUERICH</pre>
-  <p>Die Kommentare werden von Cashbox eingefügt und entfernt.</p>
+  <p>Die Kommentare werden von Cashbox eingefÃ¼gt und entfernt.</p>
 
   <h3>Fehler: <code>fehler</code></h3>
-  <pre>fehler Nächste Zeile: 'dummy' ist ungültig. Es wurde 'f', 'n', 'b' oder 'vorschlag' erwartet!
+  <pre>fehler NÃ¤chste Zeile: 'dummy' ist ungÃ¼ltig. Es wurde 'f', 'n', 'b' oder 'vorschlag' erwartet!
 2017-01-03a dummy 143.35 privat Privat</pre>
-  <p>Die <code>fehler</code> werden von Cashbox eingefügt und entfernt.</p>
+  <p>Die <code>fehler</code> werden von Cashbox eingefï¿½gt und entfernt.</p>
 
   <h3>Buchung: <code>b</code></h3>
   <pre>2017-01-05a b 1686.92 bezugtkb  Mieteinnahmen Haus</pre>
-  <p>Eine Buchung wird vom Benützer im Muh2-File eingefügt.</p>
+  <p>Eine Buchung wird vom BenÃ¼tzer im Muh2-File eingefÃ¼gt.</p>
 
   <h3>Filebuchung: <code>f</code></h3>
   <pre>2017-03-03a f 74.00 verbrauchhw Brack Keyboard.pdf</pre>
-  <p>Der Benützer speichert die Rechnung im Ordner <code>buchungen</code>. Cashbox erstellt aufgrund dieser Datei den Muhfile-Eintrag.</p>
-  <p>Beinhaltet der Filename <code>SKIP</code> (grossgeschrieben), so wird die Datei übersprungen.</p>
+  <p>Der BenÃ¼tzer speichert die Rechnung im Ordner <code>buchungen</code>. Cashbox erstellt aufgrund dieser Datei den Muhfile-Eintrag.</p>
+  <p>Beinhaltet der Filename <code>SKIP</code> (grossgeschrieben), so wird die Datei Ã¼bersprungen.</p>
   <p>Anstelle eines Files kann auch ein Verzeichnis erstellt werden. Der Verzeichnisname entspricht der Buchung. Der Inhalt des Verzeichnisses ist frei.</p>
 
   <h3>Buchungsvorschlag: <code>vorschlag</code></h3>
   <pre># journal_zkb.csv(381): STRASSENVERKEHRSAMT DES KANTONS ZUERICH 
 2017-01-03b vorschlag 139.00 privat Privatbezug</pre>
-  <p>Ein <code>Vorschlag</code> wird von Cashbox eingefügt und entfernt. Aufgrund des Bankjournals macht Cashbox Vorschläge.</p>
+  <p>Ein <code>Vorschlag</code> wird von Cashbox eingefÃ¼gt und entfernt. Aufgrund des Bankjournals macht Cashbox VorschlÃ¤ge.</p>
 
   <h2>Output: Text</h2>
   <p>Keine praktische Verwendung. Wird nur zum Testen und Debuggen verwendet.</p>
   <h2>Output: HTML</h2>
-  <p><code>out_KontenUndAbschluss.html</code>: Das optimale Arbeitsdokument. Buchungen können einfach mit der Textsuche gefunden werden. Schnelle Hyperlinks zwischen den Buchungen und zu den Dateien im Ordner <code>buchungen</code>. Detailierte Buchungsinformation, inklusive Bankinformationen und <i>versteckter</i> Information.</p>
+  <p><code>out_KontenUndAbschluss.html</code>: Das optimale Arbeitsdokument. Buchungen kÃ¶nnen einfach mit der Textsuche gefunden werden. Schnelle Hyperlinks zwischen den Buchungen und zu den Dateien im Ordner <code>buchungen</code>. Detailierte Buchungsinformation, inklusive Bankinformationen und <i>versteckter</i> Information.</p>
   <h2>Output: Pdf</h2>
-  <p><code>out_Abschluss.pdf</code>, <code>out_Konten.pdf</code>, <code>out_KontenUndAbschluss.pdf</code>: Diese Dateien können der Steuererklärung beigelegt werden. <i>Versteckte</i> Informationen sind in den Pdf-Dokumenten <i>nicht</i> enthalten.</p>
+  <p><code>out_Abschluss.pdf</code>, <code>out_Konten.pdf</code>, <code>out_KontenUndAbschluss.pdf</code>: Diese Dateien kÃ¶nnen der SteuererklÃ¤rung beigelegt werden. <i>Versteckte</i> Informationen sind in den Pdf-Dokumenten <i>nicht</i> enthalten.</p>
   <h2>Mwst (Mehrwertsteuer)</h2>
   <h3>MWST vereinfacht abrechnen</h3>
   <p>TODO</p>
@@ -58,59 +58,59 @@
   <h4>Konzept</h4>
   <ul>
     <li>Benzin bezahlen:<br />
-      3-fach-Buchung: 108.- wird dem Bankkonto belastet, 100.- wird <code>6200 Fahrzeugkosten</code> und 8.- <code>1171 Vorsteuer auf Investitionen und übrigen Betriebsaufwand</code> belastet.
+      3-fach-Buchung: 108.- wird dem Bankkonto belastet, 100.- wird <code>6200 Fahrzeugkosten</code> und 8.- <code>1171 Vorsteuer auf Investitionen und Ã¼brigen Betriebsaufwand</code> belastet.
     </li>
     <li>Auftrag wird bezahlt<br />
       3-fach-Buchung: 1080.- wird dem Bankkonto gutgeschrieben, 1000.- wird <code>3400 Einnahmen</code> und 80.- <code>2200 Geschuldete MWST</code> gutgeschrieben.
     </li>
     <li>MWST-Abrechnung<br />
-      Ziel der MWST-Abrechnung ist es, die Konten <code>1170 Vorsteuer auf Materialaufwand und Dienstleistungen</code>, <code>1171 Vorsteuer auf Investitionen und übrigen Betriebsaufwand</code> und <code>2200 Geschuldete MWST</code> auf 0.- zu setzen, indem mit drei Buchungen <code>mwst1170, mwst1171, mwst2200</code> die Beträge auf das Konto <code>2201 Geschuldete MWST (Trans. Aktiven / spätere Bankzahlung)</code> umgebucht werden. Diese Zahlungen entsprechen den Angaben, die für die MWST-Abrechnung benötigt werden.
+      Ziel der MWST-Abrechnung ist es, die Konten <code>1170 Vorsteuer auf Materialaufwand und Dienstleistungen</code>, <code>1171 Vorsteuer auf Investitionen und Ã¼brigen Betriebsaufwand</code> und <code>2200 Geschuldete MWST</code> auf 0.- zu setzen, indem mit drei Buchungen <code>mwst1170, mwst1171, mwst2200</code> die BetrÃ¤ge auf das Konto <code>2201 Geschuldete MWST (Trans. Aktiven / spÃ¤tere Bankzahlung)</code> umgebucht werden. Diese Zahlungen entsprechen den Angaben, die fÃ¼r die MWST-Abrechnung benÃ¶tigt werden.
     </li>
     <li>Bezahlung der MWST-Rechnung<br />
-      Die Zahlung an die MWST wird mit <code>mwstZahlung</code> gebucht. So wird das Konto <code>2201 Geschuldete MWST (Trans. Aktiven / spätere Bankzahlung)</code> wieder auf 0.- gesetzt.
+      Die Zahlung an die MWST wird mit <code>mwstZahlung</code> gebucht. So wird das Konto <code>2201 Geschuldete MWST (Trans. Aktiven / spÃ¤tere Bankzahlung)</code> wieder auf 0.- gesetzt.
     </li>
   </ul>
-  <p>Merke: Die Schulden gegenüber der MWST VOR der Abrechnung.</p>
+  <p>Merke: Die Schulden gegenÃ¼ber der MWST VOR der Abrechnung.</p>
   <ul>
     <li><code>1170 Vorsteuer auf Materialaufwand und Dienstleistungen</code></li>
-    <li><code>1171 Vorsteuer auf Investitionen und übrigen Betriebsaufwand</code></li>
+    <li><code>1171 Vorsteuer auf Investitionen und Ã¼brigen Betriebsaufwand</code></li>
     <li><code>2200 Geschuldete MWST</code></li>
     <li><b>Alle drei Konten werden mit der MWST-Abrechnung auf 0.- gesetzt.</b></li>
   </ul>
-  <p>Merke: Die Schulden gegenüber der MWST NACH der Abrechnung bis zur Bezahlung der MWST.</p>
+  <p>Merke: Die Schulden gegenÃ¼ber der MWST NACH der Abrechnung bis zur Bezahlung der MWST.</p>
   <ul>
-    <li><code>2201 Geschuldete MWST (Trans. Aktiven / spätere Bankzahlung)</code></li>
+    <li><code>2201 Geschuldete MWST (Trans. Aktiven / spÃ¤tere Bankzahlung)</code></li>
     <li><b>Das Konto weist zwischen Abrechnung und Bezahlung einen Betrag ungleich 0.- auf.</b></li>
   </ul>
   <h3>MWST-Abrechnen</h3>
   <p>Die MWST wird automatisch abgerechnet wenn: Ein Quartal vorbei ist UND noch keine Abrechnung <code>mwst\2017-06-30 MWST Abrechnung 2017 Quartal 2.txt</code> vorliegt. In der Abrechnung steht, wie vorgegangen werden muss.</p>
-  <p>Um die MWST-Abrechnung erneut durchzuführen muss die Datei <code>mwst\2017-06-30 MWST Abrechnung 2017 Quartal 2.txt</code>, sowie allfällige Buchunseinträge <code>MWST Abrechnung 2017 Quartal 2</code> gelöscht werden.</p>
+  <p>Um die MWST-Abrechnung erneut durchzufÃ¼hren muss die Datei <code>mwst\2017-06-30 MWST Abrechnung 2017 Quartal 2.txt</code>, sowie allfÃ¤llige BuchungseintrÃ¤ge <code>MWST Abrechnung 2017 Quartal 2</code> gelÃ¶scht werden.</p>
   <h2>Tags</h2>
   <p>
-    Buchungen können mit <i>Tags</i> versehen werden. In
+    Buchungen kÃ¶nnen mit <i>Tags</i> versehen werden. In
     <code>out_tags.csv</code>
-    werden die Buchungen nach Tags geordnet gruppiert. <i>Tags</i> können unabhängig vom Kontenplan verwendet werden. Zum Beispiel helfen die Tags <code>KRANKENKASSE_ZU_SENDEN</code>,  <code>KRANKENKASSE_GESENDET</code>, <code>KRANKENKASSE_ABGERECHNET</code> zum Überwachen von Krankenkassenrechnungen.
+    werden die Buchungen nach Tags geordnet gruppiert. <i>Tags</i> kÃ¶nnen unabhÃ¤ngig vom Kontenplan verwendet werden. Zum Beispiel helfen die Tags <code>KRANKENKASSE_ZU_SENDEN</code>,  <code>KRANKENKASSE_GESENDET</code>, <code>KRANKENKASSE_ABGERECHNET</code> zum Ãœberwachen von Krankenkassenrechnungen.
   </p>
-  <p>Zum Darstellen dient <code>cashbox_tags-vorlage.xlsm</code>. Dieses Excel-Sheet liest <code>out_tags.csv</code> ein und lässt sich leicht Nachbearbeiten. Für jedes Tag wird zudem die Summe berechnet. Anwendungsbeispiel: Alle mit <code>HAUSUMBAU</code> gekennzeichneten Buchungen werden zusammengstellt und die Summe berechnet.</p>
+  <p>Zum Darstellen dient <code>cashbox_tags-vorlage.xlsm</code>. Dieses Excel-Sheet liest <code>out_tags.csv</code> ein und lÃ¤sst sich leicht Nachbearbeiten. FÃ¼r jedes Tag wird zudem die Summe berechnet. Anwendungsbeispiel: Alle mit <code>HAUSUMBAU</code> gekennzeichneten Buchungen werden zusammengestellt und die Summe berechnet.</p>
   <h1>Referenz</h1>
   <h2>Konfiguration</h2>
   <h3>File: <code>cashbox_config_jahr.cs</code></h3>
-  <p>Konfigurationsdaten, die jedes Jahr ändern.</p>
-  <p>Zuerst wird das das Jahr bestimmt. Als Text und als Daten. Ein Buchungsjahr kann auch im Sommer beginnen. So wäre <code>config.Jahr = "2016-2017"</code>.</p>
+  <p>Konfigurationsdaten, die jedes Jahr Ã¤ndern.</p>
+  <p>Zuerst wird das das Jahr bestimmt. Als Text und als Daten. Ein Buchungsjahr kann auch im Sommer beginnen. So wÃ¤re <code>config.Jahr = "2016-2017"</code>.</p>
   <pre>int jahr = 2017;
 config.Jahr = 2017.ToString();
 config.DateStart = new DateTime(jahr, 1, 1);
 config.DateEnd = new DateTime(jahr, 12, 31);
 </pre>
-  <p>Nun werden die Kontostände vom Jahresabschluss des Vorjahres übernommen.</p>
+  <p>Nun werden die KontostÃ¤nde vom Jahresabschluss des Vorjahres Ã¼bernommen.</p>
   <pre>config.EroeffnungKontostand.Add(1021, 27525.30M);
 config.EroeffnungKontostand.Add(1024, 34895.13M);
 config.EroeffnungKontostand.Add(2800, 18452.56M);
 </pre>
   <h3>File: <code>cashbox_config_kontenplan.cs</code></h3>
-  <p>Im Kontenplan sind Informationen abgelegt, die über die Jahre kaum ändern.</p>
+  <p>Im Kontenplan sind Informationen abgelegt, die Ã¼ber die Jahre kaum Ã¤ndern.</p>
   <p>Der Name des Mandanten erscheint im Pdf, sowie die zu verwendenden Tags</p>
-  <pre>config.Mandant = "Märki Informatik";
+  <pre>config.Mandant = "MÃ¤rki Informatik";
 
 config.Tags.Add("FAHRZEUG");
 config.Tags.Add("SECRET");
@@ -122,10 +122,10 @@ config.Tags.Add("HAUSUMBAU");
 
 // AKTIVEN
 h.GroupBilanzAktiven();
-h.GroupBilanz_("Umlaufvermögen");
-h.Add(1021, "Zürcher Kantonalbank 1139-0xxx.xxx");
+h.GroupBilanz_("Umlaufvermï¿½gen");
+h.Add(1021, "ZÃ¼rcher Kantonalbank 1139-0xxx.xxx");
 
-h.GroupBilanz_("Anlagevermögen");
+h.GroupBilanz_("Anlagevermï¿½gen");
 h.Add(1530, "Fahrzeuge");
 
 // PASSIVEN
@@ -138,12 +138,12 @@ h.GroupBilanzEnd();
 h.GroupErfolgsrechnungEinnahmen();
 h.GroupErfolgsrechnung_("Betriebsertrag (Leistungen)");
 h.Add(3400, "Einnahmen");
-h.Add(3410, "Rückstellung angefangene Arbeiten");
+h.Add(3410, "RÃ¼ckstellung angefangene Arbeiten");
 
 // AUSGABEN
 h.GroupErfolgsrechnungAusgaben();
 h.GroupErfolgsrechnung_("Personalaufwand");
-h.Add(5700, "AHV- u.a. Beiträge");
+h.Add(5700, "AHV- u.a. Beitrï¿½ge");
 
 h.GroupErfolgsrechnung_("Sonstiger Betriebsaufwand");
 h.Add(6100, "Unterhalt, Reparaturen, Ersatz");
@@ -151,11 +151,11 @@ h.Add(6200, "Fahrzeugkosten");
 
 // GEWINN
 h.GroupErfolgsrechnung_("Abschluss");
-h.Add(9000, "Gewinn Geschäftsjahr");
+h.Add(9000, "Gewinn GeschÃ¤ftsjahr");
 
 h.GroupErfolgsrechnungEnd();</pre>
 
-  <p>Nun werden die verwendeten Bankauszüge definiert. <code>2021</code> ist das dem Bankauszug entsprechende Konto.</p>
+  <p>Nun werden die verwendeten BankauszÃ¼ge definiert. <code>2021</code> ist das dem Bankauszug entsprechende Konto.</p>
   <pre>config.Add(new BankZKB(1021, "ZKB", "journal_zkb.csv"));</pre>
 
   <p>Nun werden eventuelle Constraints (Tests) definiert. <code>ConstraintZeroSaldoEveryDay</code> bewirkt, dass jeweils am Tagesende ein Fehler ausgegeben wird, falls das Konto <code>1022</code> nicht auf CHF0.0 steht.</p>
@@ -163,10 +163,10 @@ h.GroupErfolgsrechnungEnd();</pre>
   <pre>config.Add(new ConstraintZeroSaldoEndOfYear(2850));</pre>
 
   <h3>File: <code>cashbox_config_vorlagebuchungen.cs</code></h3>
-  <p>Die Mwst-Sätze. Diese Sätze werden in den Buchungsvorlagen verwendet werden. Zum Beispiel <code>h.Add(3400, 1021, "einnahmen", "USt80", "Einnahmen");</code></p>
+  <p>Die Mwst-SÃ¤tze. Diese SÃ¤tze werden in den Buchungsvorlagen verwendet werden. Zum Beispiel <code>h.Add(3400, 1021, "einnahmen", "USt80", "Einnahmen");</code></p>
   <pre>config.AddMWST("keineMWST");
 config.AddMWST("VSB80", 8.0, 1171, "Verbrauch");
-config.AddMWST("VSS25", 2.5, 1171, "Bücher");
+config.AddMWST("VSS25", 2.5, 1171, "BÃ¼cher");
 config.AddMWST("USt80", 8.0, 2200, "Einnahmen");
 </pre>
 
@@ -178,12 +178,12 @@ config.AddErsatz(1022, "zkbtemp", 1021);
 
   <p>Alle Buchungsvorlagen</p>
   <pre>BuchungsvorlageHelper h = new BuchungsvorlageHelper(config);
-h.Add(1021, 1022, "zkbtemp", "", "Komplexe Buchung über temporäres Konto");
+h.Add(1021, 1022, "zkbtemp", "", "Komplexe Buchung Ã¼ber temporÃ¤res Konto");
 h.Add(1021, 2850, "bancomat", "", "Barbezug");
-h.Add(1021, 6500, "buch", "VSS25", "Buecher/Hefte");
+h.Add(1021, 6500, "buch", "VSS25", "BÃ¼cher/Hefte");
 h.Add(1021, 6500, "verbrauch", "VSB80", "Verbrauchsmaterial");
 h.Add(1021, 6500, "verbrauchhw", "VSB80", "Verbrauchsmaterial Hardware");
-h.Add(2800, 9000, "abschlussGewinn", "", "Gewinn Geschäftsjahr");
+h.Add(2800, 9000, "abschlussGewinn", "", "Gewinn GeschÃ¤ftsjahr");
 h.Add(2850, 1021, "privateinlage", "", "Privateinlage");
 h.Add(3400, 1021, "einnahmen", "USt80", "Einnahmen");
 </pre>
@@ -192,9 +192,9 @@ h.Add(3400, 1021, "einnahmen", "USt80", "Einnahmen");
   <pre>config.BuchungsvorlageNichtGefunden = "privat";</pre>
 
   <h3>File: <code>cashbox_config_vorschlaege.cs</code></h3>
-  <p>Aufgrund vom Kommentar im Bankjournal können Buchungsvorschläge gemacht werden.</p>
+  <p>Aufgrund vom Kommentar im Bankjournal kÃ¶nnen BuchungsvorschlÃ¤ge gemacht werden.</p>
   <pre>VorschlagHelper h = new VorschlagHelper(config);
-// Falls in der Banknotiz <code>Bezug ZKB Maestro Karte Nr. 73006568, ZKB Rüti 1</code> steht, wird die Vorlagebuchung "bancomat" genommen und ein <code>vorschlag</code> gemacht.
+// Falls in der Banknotiz <code>Bezug ZKB Maestro Karte Nr. 73006568, ZKB RÃ¼ti 1</code> steht, wird die Vorlagebuchung "bancomat" genommen und ein <code>vorschlag</code> gemacht.
 h.Add("73006568", "bancomat");
 // Falls in der Banknotiz <code>MIETEINNAHMEN</code> steht, wird die Vorlagebuchung "bezugtkb" genommen. Es wird kein <code>vorschlag</code> gemacht sondern direkt gebucht <code>b</code>.
 h.Add("MIETEINNAHMEN", "bezugtkb", "Mieteinnahmen Haus", direktBuchen: true);
@@ -205,15 +205,15 @@ h.Add("MIETEINNAHMEN", "bezugtkb", "Mieteinnahmen Haus", direktBuchen: true);
   <p>Beispiel: <code>2017-03-03a f 74.00 verbrauchhw-bar-PRIVAT Brack Keyboard {Kinderzimmer}.pdf</code></p>
   <ul>
     <li><code>2017-03-03a</code>:<br />
-      Die eindeutige Referenz der Buchung. Bestehend aus Valuta und einem oder mehreren Bu<br />
-      Frei wählbarerer Kommentar bis zum Zeilenende. Der Text in <code>{}</code> wird in der Pdf-Ausgabe nicht angezeigt.</li>
+      Die eindeutige Referenz der Buchung. Bestehend aus Valuta und einem oder mehreren Buchstaben.<br />
+      Frei wÃ¤hlbarerer Kommentar bis zum Zeilenende. Der Text in <code>{}</code> wird in der Pdf-Ausgabe nicht angezeigt.</li>
   </ul>
   <h3>Buchungsanweisungen</h3>
   <p>Buchungsanweisungen wie <code>verbrauchhw-bar-SECRET</code> sind so aufgebaut:</p>
   <p>Zuerst muss eine Buchungsvorlage, z. B. <code>verbrauchhw</code>, erscheinen.</p>
   <p>Buchungsvorlagen werden in <code>cashbox_config_vorlagebuchungen.cs</code> definiert. Zum Beispiel <code>h.Add(1021, 6500, "verbrauchhw", "VSB80", "Verbrauchsmaterial Hardware");</code>. Dies definiert Konto Haben <code>1021</code> (Bank), Konto Soll <code>6500</code> (Verbrauchsmaterial) und Mehrwertsteuersatz <code>VSB80</code>.</p>
-  <p>Anschliessen zur Buchungsvorlage kommt optional, mit <code>-</code> getrennt, Mwst-Sätze, Vordefinierte Konten oder Tags.</p>
-  <p>Mwst-Sätze werden in <code>cashbox_config_vorlagebuchungen.cs</code> definiert. Zum Beispiel <code>config.AddMWST("VSB80", 8.0, 1171, "Verbrauch");</code>.</p>
+  <p>AnschlieÃŸend zur Buchungsvorlage kommt optional, mit <code>-</code> getrennt, Mwst-SÃ¤tze, Vordefinierte Konten oder Tags.</p>
+  <p>Mwst-SÃ¤tze werden in <code>cashbox_config_vorlagebuchungen.cs</code> definiert. Zum Beispiel <code>config.AddMWST("VSB80", 8.0, 1171, "Verbrauch");</code>.</p>
   <p>Vordefinierte Konten werden in <code>cashbox_config_vorlagebuchungen.cs</code> definiert. Zum Beispiel <code>config.AddErsatz(2850, "bar", 1021, 1023, 1024);</code>. In einer Buchung wird erwartet, dass eines der drei Konten <code>1021, 1023, 1024</code> (ZKB, Clientis, Raiffeisen) vorkommt. Dieses Konto wird nun durch das Konto <code>2850</code> (Privat) ersetzt.</p>
   <p>Tags werden in <code>cashbox_config_kontenplan.cs</code> definiert. Zum Beispiel <code>config.Tags.Add("SECRET");</code>. Tags werden immer in Grossbuchstaben geschrieben.</p>
 
@@ -222,10 +222,10 @@ h.Add("MIETEINNAHMEN", "bezugtkb", "Mieteinnahmen Haus", direktBuchen: true);
   <p><code>2017-03-03a b 74.00 verbrauchhw Brack Keyboard</code>: Dasselbe Buchung, aber im Muh2-File eingetragen.</p>
   <p><code>2017-03-03a f 74.00 verbrauchhw.pdf</code>: Der Kommentar darf weggelassen werden.</p>
   <p><code>2017-03-03xyzab f 74.00 verbrauchhw.pdf</code>: Die Referenz darf aus mehreren Buchstaben bestehen.</p>
-  <p><code>2017-03-03a f 74.00 verbrauchhw Rückvergütung Brack.pdf</code>: Der Betrag darf negativ sein. Hier im Beispiel einer Rückvergütung.</p>
+  <p><code>2017-03-03a f 74.00 verbrauchhw RÃ¼ckvergÃ¼tung Brack.pdf</code>: Der Betrag darf negativ sein. Hier im Beispiel einer RÃ¼ckvergÃ¼tung.</p>
 
   <h1>Installation</h1>
-  <h2>Übersicht über die Verzeichnisstruktur</h2>
+  <h2>Ãœbersicht Ã¼ber die Verzeichnisstruktur</h2>
   <table>
     <thead>
       <td>Verzeichnis / Datei</td>
@@ -255,12 +255,12 @@ h.Add("MIETEINNAHMEN", "bezugtkb", "Mieteinnahmen Haus", direktBuchen: true);
     <tr>
       <td>./maerki_informatik/2017/cashbox_run.bat</td>
       <td>Ja</td>
-      <td>Zum Starten von Cashbox. Alle verwendeten Pfade sind relativ. Es können verschiedene <i>bat</i>-Files verwendet werden, z. B. mit Pdf mit langsamerer Verarbeitung oder mit Gui.</td>
+      <td>Zum Starten von Cashbox. Alle verwendeten Pfade sind relativ. Es kÃ¶nnen verschiedene <i>bat</i>-Files verwendet werden, z. B. mit Pdf mit langsamerer Verarbeitung oder mit Gui.</td>
     </tr>
     <tr>
       <td>./maerki_informatik/2017/cashbox_config_*.cs</td>
       <td>Ja</td>
-      <td>Die Konfigurationsfiles für <i>Jahr</i>, <i>Kontenplan</i>, <i>Vorlagebuchungen</i> und <i>Vorschläge</i>. Diese Dateien müssen für jeden Mandaten angepasst werden.</td>
+      <td>Die Konfigurationsfiles fÃ¼r <i>Jahr</i>, <i>Kontenplan</i>, <i>Vorlagebuchungen</i> und <i>VorschlÃ¤ge</i>. Diese Dateien mÃ¼ssen fÃ¼r jeden Mandaten angepasst werden.</td>
     </tr>
     <tr>
       <td>./maerki_informatik/2017/out_*</td>
