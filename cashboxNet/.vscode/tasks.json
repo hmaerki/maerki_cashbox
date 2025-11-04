@@ -190,6 +190,7 @@
                 "${workspaceFolder}/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll",
                 "${workspaceFolder}/bin/Debug/net9.0/MigraDoc.DocumentObjectModel.dll",
                 "${workspaceFolder}/bin/Debug/net9.0/PdfSharp.dll",
+                "${workspaceFolder}/bin/Debug/net9.0/SharpMt940Lib.Core.dll",
             ],
             "group": "build",
             "dependsOn": "cashbox build debug",
