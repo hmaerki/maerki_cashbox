@@ -45,8 +45,8 @@ function getOrCreateCashboxTerminal(cwd: string): vscode.Terminal {
     // Create a new terminal
     cashboxTerminal = vscode.window.createTerminal({
         name: 'Cashbox Run',
-        cwd: cwd,
-        shellPath: 'bash'  // or '/bin/bash' on Linux/macOS
+        // shellPath: 'bash',  // or '/bin/bash' on Linux/macOS
+        cwd: cwd
     });
 
     return cashboxTerminal;
@@ -107,7 +107,7 @@ function runCashboxCommandCommon(args: string) {
 
     // Get or create terminal and run cashbox
     const terminal = getOrCreateCashboxTerminal(cwd);
-    terminal.sendText(`cd '${cwd}'`);
+    // terminal.sendText(`cd '${cwd}'`);
     terminal.sendText(cmd);
     terminal.show();
 
