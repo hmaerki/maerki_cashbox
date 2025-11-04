@@ -403,8 +403,11 @@ namespace Raptorious.SharpMt940Lib
             while (pointer < tokenized.Length)
             {
                 // Seperator, this is the Trailer! We split messages based on trailer! - Right, check.
-                var trailerIndex = Array.IndexOf(tokenized, format.Trailer.Data, pointer);
-
+                var trailerIndex = tokenized.Length;
+                if (!string.IsNullOrEmpty(format.Trailer.Data))
+                {
+                Array.IndexOf(tokenized, format.Trailer.Data, pointer);
+                }
                 // When we found a trailer.. then..
                 if (trailerIndex >= 0)
                 {

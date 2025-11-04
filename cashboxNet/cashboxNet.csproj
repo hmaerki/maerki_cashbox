@@ -58,7 +58,14 @@
         <PackageReference Include="CS-Script" Version="4.11.2" />
         <PackageReference Include="PDFsharp" Version="6.2.2" />
         <PackageReference Include="PDFsharp-MigraDoc" Version="6.2.2" />
-        <PackageReference Include="SharpMt940Lib.Core" Version="1.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Project references for source-level debugging -->
+        <ProjectReference Include="libs/SharpMt940Lib.Core/Raptorious.SharpMt940Lib/Raptorious.SharpMt940Lib.csproj">
+            <!-- Exclude the test project to avoid conflicts -->
+            <ExcludeAssets>build;buildtransitive</ExcludeAssets>
+        </ProjectReference>
     </ItemGroup>
 
     <ItemGroup Condition="'$(Configuration)' == 'Debug'">

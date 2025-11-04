@@ -10,6 +10,7 @@ using Raptorious.SharpMt940Lib.Mt940Format;
 
 namespace cashboxNet
 {
+
     class BankReaderMT940 : IBankReader
     {
         private readonly Configuration Config;
@@ -53,15 +54,20 @@ namespace cashboxNet
             // mt940Parameters.Encoding = Encoding.GetEncoding("ISO-8859-1");
             // mt940Parameters.LeadingLineNumber = LeadingLineNumber;
 
-            var header = new Separator("");
-            var footer = new Separator("");
-            var result = Mt940Parser.Parse(new GenericFormat(header, footer), filename, CultureInfo.InvariantCulture, mt940Parameters);
+            var format = new GenericFormat(new Separator(""), new Separator(""));
+            var result = BankReaderMT940Parser.Parse(format, filename, CultureInfo.InvariantCulture, mt940Parameters);
 
             int i = 1;
             foreach (CustomerStatementMessage customer in result)
             {
                 foreach (Transaction transaction in customer.Transactions)
                 {
+                    string Description = "";
+                    if (transaction.Description != null)
+                    {
+                        Description = transaction.Description;
+                    }
+
                     Trace.Assert(transaction.Amount.Currency.Code == "CHF");
                     {
                         // Eine Buchung kann mehrere Vesr-Buchung umfassen...
@@ -71,7 +77,7 @@ namespace cashboxNet
 
                         // Mehrere Buchung:
                         // "000288482914810000000007946 CHF         2'516.40 / 000288482914810000000007962 CHF         2'106.00 / Gutschrift VESR"
-                        string[] list = transaction.Description.Split('/');
+                        string[] list = Description.Split('/');
                         if (list[list.Length - 1].Contains(" Gutschrift VESR"))
                         {
                             Trace.Assert(transaction.DebitCredit == DebitCredit.Credit);
@@ -111,7 +117,7 @@ namespace cashboxNet
                             throw new NotImplementedException();
                     }
 
-                    BankEntry bankEntry = new BankEntry(BankFactory, lineNr: i++, valuta: new TValuta(transaction.ValueDate), buchungstext: transaction.Description, betrag: transaction.Amount.Value, statement: statement);
+                    BankEntry bankEntry = new BankEntry(BankFactory, lineNr: i++, valuta: new TValuta(transaction.ValueDate), buchungstext: Description, betrag: transaction.Amount.Value, statement: statement);
                     yield return bankEntry;
                 }
             }

@@ -15,20 +15,33 @@
                 "--pdf",
                 "--timestamp=2000-01-01 00:00:00"
             ],
-            "cwd": "/home/maerki/work_maerki_util/cashbox_git/maerki_informatik/2025",
+            "cwd": "/home/maerki/work_maerki_util/maerki_cashbox_privat/positron/2025",
             "program": "${workspaceFolder}/bin/Debug/net9.0/cashboxNet.dll",
             "console": "internalConsole",
             "stopAtEntry": false,
             "preLaunchTask": "cashbox build debug",
             "requireExactSource": false,
+            "enableStepFiltering": false,
+            "suppressJITOptimizations": true,
             "justMyCode": false
         },
         {
             "name": "cashboxNet",
-            "type": "dotnet",
+            "type": "coreclr",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/cashboxNet.csproj",
-            "launchConfigurationId": "TargetFramework=;cashboxNet"
+            "program": "${workspaceFolder}/bin/Debug/net9.0/cashboxNet.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "preLaunchTask": "cashbox build debug",
+            "requireExactSource": false,
+            "justMyCode": false,
+            "enableStepFiltering": false,
+            "suppressJITOptimizations": true,
+            "sourceFileMap": {
+                ".": "${workspaceFolder}"
+            }
         },
         {
             "name": "NUnit Tests",
