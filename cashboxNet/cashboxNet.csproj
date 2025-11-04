@@ -6,7 +6,6 @@
         <RootNamespace>cashboxNet</RootNamespace>
         <AssemblyName>cashboxNet</AssemblyName>
         <Nullable>disable</Nullable>
-        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <IsPackable>false</IsPackable>
         <GenerateProgramFile>false</GenerateProgramFile>
         <!-- Single-file deployment: DISABLED for CS-Script compatibility -->
@@ -18,9 +17,20 @@
         <TrimmerDefaultAction>link</TrimmerDefaultAction>
     </PropertyGroup>
 
-    <PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+        <!-- Debug-specific settings for better debugging experience -->
+        <DebugType>portable</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+        <Optimize>false</Optimize>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <!-- Release-specific settings -->
         <Deterministic>true</Deterministic>
         <PathMap>$(MSBuildProjectDirectory)=.</PathMap>
+        <DebugType>none</DebugType>
+        <DebugSymbols>false</DebugSymbols>
+        <Optimize>true</Optimize>
     </PropertyGroup>
 
     <ItemGroup>
