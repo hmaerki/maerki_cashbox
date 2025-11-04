@@ -17,7 +17,7 @@ code --force --install-extension cashboxExtension/muh2-0.0.1.vsix
 
 Open a `cashbox_journal.muh2` in VSCode.
 
-Press `<shift-ctrl-c>` *cashbox* or `<shift-ctrl-p>` for *cashbox with Pdf*.
+Press `<shift+ctrl+c>`.
 
 You should see
 ```bash

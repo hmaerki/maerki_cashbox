@@ -28,14 +28,9 @@
     ],
     "keybindings": [
       {
-        "command": "cashbox.run",
+        "command": "cashbox.pdf",
         "key": "shift+ctrl+c",
         "mac": "shift+cmd+c"
-      },
-      {
-        "command": "cashbox.pdf",
-        "key": "shift+ctrl+p",
-        "mac": "shift+cmd+p"
       }
     ],
     "languages": [
