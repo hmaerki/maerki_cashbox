@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescriptionAttribute("SharpMT940Lib implements the MT940 format in C# and is based on specifications of multiple banks. You can use it as a base for financial software or for conversions to other formats like CSV or OFX.")]
 [assembly: AssemblyProductAttribute("Raptorious.Finance.Swift.Mt940")]
 [assembly: AssemblyCopyrightAttribute("Copyright 2011-2016 Jaco Adriaansen")]
-[assembly: AssemblyVersionAttribute("1.2.0.0")]
-[assembly: AssemblyFileVersionAttribute("1.2.0.0")]
-[assembly: AssemblyInformationalVersionAttribute("1.2.0.0")]
+[assembly: AssemblyVersionAttribute("1.3.0.0")]
+[assembly: AssemblyFileVersionAttribute("1.3.0.0")]
+[assembly: AssemblyInformationalVersionAttribute("1.3.0.0")]
 [assembly: GuidAttribute("abd839a7-a3e5-475c-8fe1-e936c5091652")]
 [assembly: ComVisibleAttribute(false)]
 [assembly: CLSCompliantAttribute(true)]
@@ -19,9 +19,9 @@ namespace System {
         internal const System.String AssemblyDescription = "SharpMT940Lib implements the MT940 format in C# and is based on specifications of multiple banks. You can use it as a base for financial software or for conversions to other formats like CSV or OFX.";
         internal const System.String AssemblyProduct = "Raptorious.Finance.Swift.Mt940";
         internal const System.String AssemblyCopyright = "Copyright 2011-2016 Jaco Adriaansen";
-        internal const System.String AssemblyVersion = "1.2.0.0";
-        internal const System.String AssemblyFileVersion = "1.2.0.0";
-        internal const System.String AssemblyInformationalVersion = "1.2.0.0";
+        internal const System.String AssemblyVersion = "1.3.0.0";
+        internal const System.String AssemblyFileVersion = "1.3.0.0";
+        internal const System.String AssemblyInformationalVersion = "1.3.0.0";
         internal const System.String Guid = "abd839a7-a3e5-475c-8fe1-e936c5091652";
         internal const System.Boolean ComVisible = false;
         internal const System.Boolean CLSCompliant = true;

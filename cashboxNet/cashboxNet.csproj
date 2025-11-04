@@ -8,6 +8,9 @@
         <Nullable>disable</Nullable>
         <IsPackable>false</IsPackable>
         <GenerateProgramFile>false</GenerateProgramFile>
+        <StartupObject>cashboxNet.Program</StartupObject>
+        <!-- Use auto-generated assembly attributes -->
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
         <!-- Single-file deployment: DISABLED for CS-Script compatibility -->
         <!-- CS-Script cannot reference single-file executables as assemblies -->
         <PublishSingleFile>false</PublishSingleFile>
@@ -35,6 +38,8 @@
 
     <ItemGroup>
         <Compile Remove="src/SvnVersionBase.cs" />
+        <!-- Exclude library source files to prevent type conflicts with ProjectReference -->
+        <Compile Remove="libraries/**/*.cs" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(Configuration)' == 'Release'">

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using Raptorious.SharpMt940Lib;
 using Raptorious.SharpMt940Lib.Mt940Format;
@@ -50,8 +51,8 @@ namespace cashboxNet
             string filename = Path.Combine(Directory, BankFactory.Filename);
             Parameters mt940Parameters = new Parameters();
             // mt940Parameters.Encoding = Encoding.GetEncoding(Fileencoding);
-            // mt940Parameters.Encoding = Encoding.GetEncoding("ISO-8859-1");
-            // mt940Parameters.LeadingLineNumber = LeadingLineNumber;
+            mt940Parameters.Encoding = Encoding.GetEncoding("ISO-8859-1");
+            mt940Parameters.LeadingLineNumber = LeadingLineNumber;
 
             var header = new Separator("");
             var footer = new Separator("");
