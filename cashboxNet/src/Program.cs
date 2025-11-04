@@ -20,6 +20,11 @@ namespace cashboxNet
 
             Parser.Default.ParseArguments<CommandLineOptions>(args).WithParsed(options =>
                       {
+                          if (options.Dir != null)
+                          {
+                            Environment.CurrentDirectory = options.Dir;
+                          }
+
                           ConfigurationProgramArguments arguments = new ConfigurationProgramArguments(options, Environment.CurrentDirectory);
 
                           Core core = new Core();

@@ -78,6 +78,7 @@ namespace cashboxNet
         // 
         public Result Run(ConfigurationProgramArguments args)
         {
+            Console.WriteLine($"Working directory: {args.Directory}");
             Console.WriteLine("Read configuration...");
             Configuration config = new Configuration(args);
 

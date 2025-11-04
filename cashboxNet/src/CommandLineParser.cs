@@ -13,6 +13,9 @@ namespace cashboxNet
             // Parameterless constructor for CommandLineParser compatibility
         }
 
+        [Option("dir", Default = null, HelpText = "Instead of cwd, we provide the directory containing cashbox_journal.muh2.")]
+        public string Dir { get; set; }
+
         [Option("txt", Default = false, HelpText = "Create txt-Ouput.")]
         public bool CreateTxt { get; set; }
 

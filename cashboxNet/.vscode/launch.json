@@ -9,13 +9,14 @@
             "type": "coreclr",
             "request": "launch",
             "args": [
+                "--dir=/home/maerki/work_maerki_util/maerki_cashbox_privat/positron/2025",
                 "--tags",
                 "--txt",
                 "--html",
                 "--pdf",
                 "--timestamp=2000-01-01 00:00:00"
             ],
-            "cwd": "/home/maerki/work_maerki_util/cashbox_git/maerki_informatik/2025",
+            "cwd": "${workspaceFolder}",
             "program": "${workspaceFolder}/bin/Debug/net9.0/cashboxNet.dll",
             "console": "internalConsole",
             "stopAtEntry": false,
