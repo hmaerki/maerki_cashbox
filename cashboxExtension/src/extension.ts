@@ -102,12 +102,12 @@ function runCashboxCommandCommon(args: string) {
         error_msg(`${cashbox_binary_full}: Does not exist!`);
         return;
     }
-    const cmd = `dotnet '${cashbox_binary_full}/cashboxNet/bin/Debug/net9.0/cashboxNet.dll' ${args}`;
+    const cmd = `dotnet "${cashbox_binary_full}/cashboxNet/bin/Debug/net9.0/cashboxNet.dll" ${args}`;
     outputChannel.appendLine(`DEBUG: cmd=${cmd}`);
 
     // Get or create terminal and run cashbox
     const terminal = getOrCreateCashboxTerminal(cwd);
-    // terminal.sendText(`cd '${cwd}'`);
+    // terminal.sendText(`cd "${cwd}"`);
     terminal.sendText(cmd);
     terminal.show();
 
