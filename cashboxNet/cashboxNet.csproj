@@ -8,6 +8,7 @@
         <Nullable>disable</Nullable>
         <IsPackable>false</IsPackable>
         <GenerateProgramFile>false</GenerateProgramFile>
+        <StartupObject>cashboxNet.Program</StartupObject>
         <!-- Single-file deployment: DISABLED for CS-Script compatibility -->
         <!-- CS-Script cannot reference single-file executables as assemblies -->
         <PublishSingleFile>false</PublishSingleFile>
@@ -22,6 +23,9 @@
         <DebugType>portable</DebugType>
         <DebugSymbols>true</DebugSymbols>
         <Optimize>false</Optimize>
+        <!-- Enable source link and symbol downloads for debugging third-party libraries -->
+        <EnableSourceLink>true</EnableSourceLink>
+        <EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
