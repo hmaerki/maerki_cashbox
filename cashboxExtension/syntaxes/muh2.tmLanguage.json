@@ -21,13 +21,17 @@
 				{
 					"name": "invalid.illegal.error.muh2",
 					"match": "^fehler\\b.*$"
+				},
+				{
+					"name": "invalid.illegal.error.muh2",
+					"match": "^todo\\b.*$"
 				}
 			]
 		},
 		"journal-entries": {
 			"patterns": [
 				{
-					"match": "^(\\d{4}-\\d{2}-\\d{2}\\w+)\\s+(b|f|vorschlag)\\s+(-?\\d+\\.\\d+)\\s+([a-zA-Z_-]+)\\s+(.*)$",
+					"match": "^(\\d{4}-\\d{2}-\\d{2}\\w+)\\s+(b|f|vorschlag)\\s+(-?\\d+\\.\\d+)\\s+(\\S+)\\s+(.*)$",
 					"captures": {
 						"1": {
 							"name": "entity.name.function.muh2"
@@ -41,8 +45,8 @@
 											"name": "keyword.other.todo.muh2"
 										}
 									}
-								}
-,								{
+								},
+								{
 									"match": "(\\w+)",
 									"captures": {
 										"1": {
