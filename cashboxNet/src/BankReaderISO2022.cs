@@ -35,24 +35,26 @@ namespace cashboxNet
 
         class Node
         {
-            class NodeContext
+            public class NodeContext
             {
                 private string filename;
                 public XmlNamespaceManager nsMgr;
                 public XmlDocument xmlDoc;
+                public bool xml_version2019;
 
                 public NodeContext(string filename_)
                 {
                     filename = filename_;
                     xmlDoc = new XmlDocument();
-                    xmlDoc.PreserveWhitespace = true;
                     xmlDoc.Load(filename);
+                    string tns = xmlDoc.DocumentElement.Attributes["xmlns"].Value;
+                    xml_version2019 = tns == "urn:iso:std:iso:20022:tech:xsd:camt.053.001.08";
                     nsMgr = new XmlNamespaceManager(xmlDoc.NameTable);
-                    nsMgr.AddNamespace("tns", "urn:iso:std:iso:20022:tech:xsd:camt.053.001.04");
+                    nsMgr.AddNamespace("tns", tns);
                 }
             }
 
-            private NodeContext context;
+            public NodeContext context;
             private XmlNode xmlNode;
 
             public string InnerText { get { return xmlNode.InnerText; } }
@@ -132,7 +134,12 @@ namespace cashboxNet
                 string date = nodeNtry.Select("./tns:ValDt/tns:Dt").InnerText;
 
                 string buchungstext = "";
-                Node a = nodeNtry.Select("./tns:NtryDtls/tns:TxDtls/tns:RltdPties/tns:Cdtr/tns:Nm");
+                string xpath = "./tns:NtryDtls/tns:TxDtls/tns:RltdPties/tns:Cdtr/tns:Nm";
+                if (doc.context.xml_version2019)
+                {
+                    xpath = "./tns:NtryDtls/tns:TxDtls/tns:RltdPties/tns:Cdtr/tns:Pty/tns:Nm";
+                }
+                Node a = nodeNtry.Select(xpath);
                 if (a != null)
                 {
                     buchungstext = a.InnerText;

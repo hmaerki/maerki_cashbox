@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "cashboxNet 2025",
+            "name": "cashboxNet 2026",
             "type": "coreclr",
             "request": "launch",
             "args": [
-                "--dir=/home/maerki/work_maerki_util/maerki_cashbox_privat/positron/2025",
+                "--dir=/home/maerki/work_maerki_util/maerki_cashbox_privat/maerki_informatik/2026",
                 "--tags",
                 "--txt",
                 "--html",
