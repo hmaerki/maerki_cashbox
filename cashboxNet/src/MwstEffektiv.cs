@@ -87,7 +87,7 @@ namespace cashboxNet
             kontoLeisungenAusland.ValidateIfDefined();
             if (Steuersatz < 0.0)
             {
-                throw new CashboxException($"MWST-Konfiguration nicht vollst�ndig: 'm.Steuersatz = 8.0;' fehlt.");
+                throw new CashboxException($"MWST-Konfiguration nicht vollständig: 'm.Steuersatz = 8.0;' fehlt.");
             }
         }
 
@@ -154,7 +154,7 @@ namespace cashboxNet
 
             public override void Abrechnen(string filename)
             {
-                // Eventuell bereits eingetragene MWST-Abrechnungsbuchungen l�schen
+                // Eventuell bereits eingetragene MWST-Abrechnungsbuchungen löschen
                 /*
                 abrechnungsDatum.Date
                   m.vorlageAbrechnungMaterial.Vorlage.VorlageText
@@ -166,7 +166,7 @@ namespace cashboxNet
                 {
                     using (StreamWriter sw = new StreamWriter(filename))
                     {
-                        sw.WriteLine("Um die Abrechnung durchzuf�hren bitte dieses File UND nachfolgende Buchungen l�schen:");
+                        sw.WriteLine("Um die Abrechnung durchzuführen bitte dieses File UND nachfolgende Buchungen löschen:");
                         sw.Write(buchungenZuLoeschen);
                         return;
                     }
@@ -180,7 +180,7 @@ namespace cashboxNet
 
                 // Total Umsatz
                 decimal field399rechts = N.Round10Rappen(m.kontoGeschuldeteMwst.Saldo);
-                // Abz�ge
+                // Abzüge
                 decimal field400 = N.Round10Rappen(m.kontoVorsteuerMaterial.Saldo);
                 decimal field405 = N.Round10Rappen(m.kontoVorsteuerBetrieb.Saldo);
                 decimal field479 = field400 + field405;
@@ -191,7 +191,7 @@ namespace cashboxNet
                 decimal field510 = 0;
                 if (field500 < 0)
                 {
-                    // R�ckverg�tung von MWST
+                    // Rückvergütung von MWST
                     field510 = -field500;
                     field500 = 0;
                 }
@@ -208,15 +208,15 @@ namespace cashboxNet
                 {
                     sw.WriteLine($@"{abrechnungsDatum.Date}: MWST Abrechnung {abrechnungsDatum.YearQuartalSemester}
 
-Um die Abrechnung neu zu berechnen muss dieses File gel�scht werden!
+Um die Abrechnung neu zu berechnen muss dieses File gelöscht werden!
 
-A) MWST-Formular (Online) ausf�llen und abschicken
-  Beachte: Alle nachfolgend nicht aufgef�hrten Felder werden nicht berechnet: Bitte 0 einsetzen!
+A) MWST-Formular (Online) ausfüllen und abschicken
+  Beachte: Alle nachfolgend nicht aufgeführten Felder werden nicht berechnet: Bitte 0 einsetzen!
 
   Alle Umsatzangaben sind: NETTO
   Umsatz - Entgelte
     200: {field200:N0}
-  Umsatz - Abz�ge
+  Umsatz - Abzüge
     221: {field221:N0}
   Umsatz - Kontrolle
     299: {field299:N0} {Kontrolle}

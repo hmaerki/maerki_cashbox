@@ -116,7 +116,7 @@ namespace cashboxNet
                 vorlageText = Buchungsvorlage.VorlageText;
                 if (Buchungsvorlage.BuchungsText == "")
                 {
-                    // Falls kein Text in 'cashbox_config_vorlagebuchungen.cs' vorgegeben ist: Aus dem Bankjournal �bernehmen.
+                    // Falls kein Text in 'cashbox_config_vorlagebuchungen.cs' vorgegeben ist: Aus dem Bankjournal übernehmen.
                     Kommentar = bankEntry.BankBuchungstext;
                 }
             }

@@ -22,7 +22,7 @@ namespace cashboxNet
         public readonly bool IsEinnahmenAusgaben;
         /// <summary>
         /// Normalerweise ist: Saldo = Soll - Haben
-        /// Hingegen f�r diese Konten ist: Saldo = Haben - Soll
+        /// Hingegen für diese Konten ist: Saldo = Haben - Soll
         /// </summary>
         public readonly bool IsEinnahmenPassiven;
 

@@ -6,7 +6,7 @@ using cashboxNet.MWST;
 /*
 https://www.estv.admin.ch/estv/de/home/mehrwertsteuer/fachinformationen/saldo--und-pauschalsteuersaetze.html
 
-Saldo- und Pauschalsteuers�tze sind Branchens�tze, welche die Abrechnung mit der ESTV wesentlich vereinfachen, weil die Vorsteuern nicht ermittelt werden m�ssen. Die geschuldete Steuer wird bei diesen Abrechnungsmethoden durch Multiplikation des Bruttoumsatzes, d.h. des Umsatzes einschliesslich Steuer, mit dem entsprechenden von der ESTV bewilligten Saldosteuersatz beziehungsweise Pauschalsteuersatz berechnet.
+Saldo- und Pauschalsteuersätze sind Branchensätze, welche die Abrechnung mit der ESTV wesentlich vereinfachen, weil die Vorsteuern nicht ermittelt werden müssen. Die geschuldete Steuer wird bei diesen Abrechnungsmethoden durch Multiplikation des Bruttoumsatzes, d.h. des Umsatzes einschliesslich Steuer, mit dem entsprechenden von der ESTV bewilligten Saldosteuersatz beziehungsweise Pauschalsteuersatz berechnet.
 */
 namespace cashboxNet
 {
@@ -137,11 +137,11 @@ namespace cashboxNet
                 {
                     sw.WriteLine($@"{abrechnungsDatum.Date}: MWST Abrechnung {abrechnungsDatum.YearQuartalSemester}
 
-Um die Abrechnung neu zu berechnen muss dieses File gel�scht werden!
+Um die Abrechnung neu zu berechnen muss dieses File gelöscht werden!
 
-A) MWST-Formular (Papier) ausf�llen und abschicken
+A) MWST-Formular (Papier) ausfüllen und abschicken
 200: {field200:N0}
-221: {field221:N0}  // Achtung: Dieser Wert enth�lt den Betrag �ber das ganze Jahr, ist also bei im zweiten Semester zu gross. Was aber auf die MWST-Zahlung keinen Einfluss hat...
+221: {field221:N0}  // Achtung: Dieser Wert enthält den Betrag über das ganze Jahr, ist also bei im zweiten Semester zu gross. Was aber auf die MWST-Zahlung keinen Einfluss hat...
 289: {field221:N0}
 299: {field381:N0}
 321: {field321:N0},  320: {N.F(field320)}

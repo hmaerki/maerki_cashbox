@@ -109,7 +109,7 @@ namespace cashboxNet
 
             public RevolutFileReader(BankReaderRevolut bankReaderRevolut, string filename)
             {
-                // Revolut-CHF-Statement-M�rz � Dez. 2019.csv
+                // Revolut-CHF-Statement-März – Dez. 2019.csv
                 this.bankReaderRevolut = bankReaderRevolut;
                 this.filename = filename;
             }
@@ -154,7 +154,7 @@ namespace cashboxNet
 
             private IEnumerable<string> SplitLine(int lineNr, string line)
             {
-                // CARD_PAYMENT,Current,2019-03-18 16:08:55,2019-03-19 14:07:26,"Sph�res, bar, buch, b�hne",-11.70,0.00,CHF,COMPLETED,393.80
+                // CARD_PAYMENT,Current,2019-03-18 16:08:55,2019-03-19 14:07:26,"Sphères, bar, buch, bühne",-11.70,0.00,CHF,COMPLETED,393.80
                 int begin = 0;
                 while (true)
                 {
