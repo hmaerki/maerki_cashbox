@@ -127,6 +127,10 @@ namespace cashboxNet
                     if (firstline)
                     {
                         string topline = GetTopLine();
+                        if (line != topline)
+                        {
+                            throw new Exception($"{this.filename}: Top line is '{line}'. Expected '{topline}'!");
+                        }
                         Debug.Assert(line == topline);
                         firstline = false;
                         continue;
