@@ -105,6 +105,7 @@ namespace cashboxNet
             }
 
             private string filename;
+
             public BankReaderRevolut bankReaderRevolut;
 
             public RevolutFileReader(BankReaderRevolut bankReaderRevolut, string filename)
@@ -113,7 +114,11 @@ namespace cashboxNet
                 this.bankReaderRevolut = bankReaderRevolut;
                 this.filename = filename;
             }
-            private string GetTopLine()
+            private string GetTopLineDE()
+            {
+                return "Art,Produkt,Datum des Beginns,Datum des Abschlusses,Beschreibung,Betrag,Gebühr,Währung,Status,Kontostand";
+            }
+            private string GetTopLineEN()
             {
                 return "Type,Product,Started Date,Completed Date,Description,Amount,Fee,Currency,State,Balance";
             }
@@ -126,10 +131,14 @@ namespace cashboxNet
                     lineNr++;
                     if (firstline)
                     {
-                        string topline = GetTopLine();
+                        string topline = GetTopLineDE();
                         if (line != topline)
                         {
-                            throw new Exception($"{this.filename}: Top line is '{line}'. Expected '{topline}'!");
+                            topline = GetTopLineEN();
+                            if (line != topline)
+                            {
+                                throw new Exception($"{this.filename}: Top line is '{line}'. Expected '{topline}'!");
+                            }
                         }
                         Debug.Assert(line == topline);
                         firstline = false;
@@ -220,7 +229,7 @@ namespace cashboxNet
                 {
                     return null;
                 }
-                if (state != "COMPLETED")
+                if (state is not ("COMPLETED" or "ABGESCHLOSSEN"))
                 {
                     throw new Exception($"{this.filename}: Line '{lineNr}'. Expected 'COMPLETED' but got '{state}'!");
                 }
