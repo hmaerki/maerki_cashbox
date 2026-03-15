@@ -220,12 +220,11 @@ namespace cashboxNet
                 {
                     return null;
                 }
-
-                if (state == "PENDING")
+                if (state is ("PENDING" or "AUSSTEHEND"))
                 {
                     return null;
                 }
-                if (state == "REVERTED")
+                if (state is ("REVERTED" or "STORNIERT"))
                 {
                     return null;
                 }

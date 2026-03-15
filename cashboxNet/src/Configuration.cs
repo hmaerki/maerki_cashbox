@@ -566,7 +566,14 @@ namespace cashboxNet
         /// </summary>
         public Dictionary<string, double> ExchangeRate
         {
-            get { return exchangeRate; }
+            get
+            {
+                if (exchangeRate is null)
+                {
+                    throw new CashboxException($"Please add exchange rates to cashbox_config_jahr.cs!");
+                }
+                return exchangeRate;
+            }
             set
             {
                 exchangeRate = value;
