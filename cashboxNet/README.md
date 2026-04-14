@@ -51,6 +51,29 @@ dotnet --list-sdks
 sudo apt-get install -y dotnet-sdk-9.0
 ```
 
+## Ubuntu 24.04.4 LTS
+
+```bash
+wget https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb
+sudo dpkg -i /tmp/packages-microsoft-prod.deb
+rm /tmp/packages-microsoft-prod.deb
+
+# Update and install
+sudo apt update
+sudo apt install -y dotnet-sdk-10.0
+```
+
+```bash
+wget https://dot.net/v1/dotnet-install.sh -O /tmp/dotnet-install.sh
+chmod +x /tmp/dotnet-install.sh
+/tmp/dotnet-install.sh --channel 9.0
+```
+
+Add to ~/.profile
+```text
+PATH="$HOME/.dotnet:$PATH"
+```
+
 ## Install Muh2-Extension for VSCode
 
 Download [muh2-0.0.1.vsix](https://github.com/hmaerki/maerki_util_cashbox_muh2/releases/download/v0.0.1/muh2-0.0.1.vsix).
