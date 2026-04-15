@@ -76,6 +76,9 @@ PATH="$HOME/.dotnet:$PATH"
 
 ## Install Muh2-Extension for VSCode
 
-Download [muh2-0.0.1.vsix](https://github.com/hmaerki/maerki_util_cashbox_muh2/releases/download/v0.0.1/muh2-0.0.1.vsix).
+Download [muh2-0.0.2.vsix](https://github.com/hmaerki/maerki_util_cashbox_muh2/releases/download/v0.0.2/muh2-0.0.2.vsix).
 
-In VSCode `Extensions symbol on the left -> ... -> Install from VSIX`. Now select `muh2-0.0.1.vsix` and install.
+In VSCode `Extensions symbol on the left -> ... -> Install from VSIX`. Now select `muh2-0.0.2.vsix` and install.
+
+* muh2-0.0.1.vsix: `<ctrl> - <shift> - c`
+* muh2-0.0.2.vsix: `<ctrl> - m`

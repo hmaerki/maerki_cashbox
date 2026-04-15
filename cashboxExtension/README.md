@@ -27,7 +27,7 @@ npm install
 ```bash
 # Compile and Deploy
 cd cashboxExtension
-npm run compile && npx @vscode/vsce package && code --force --install-extension muh2-0.0.1.vsix
+npm run compile && npx @vscode/vsce package && code --force --install-extension muh2-0.0.2.vsix
 ```
 
-The debug output is in `OUTPUT -> Muh2 Cashbox Extension`.
+The debug output of the running extension is in `VSCode -> OUTPUT -> Muh2 Cashbox Extension`.

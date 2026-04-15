@@ -2,7 +2,7 @@
   "name": "muh2",
   "displayName": "muh2",
   "description": "Cashbox muh2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "hmaerki",
   "repository": {
     "type": "git",
@@ -29,8 +29,8 @@
     "keybindings": [
       {
         "command": "cashbox.pdf",
-        "key": "shift+ctrl+c",
-        "mac": "shift+cmd+c"
+        "key": "shift+m",
+        "mac": "shift+m"
       }
     ],
     "languages": [
