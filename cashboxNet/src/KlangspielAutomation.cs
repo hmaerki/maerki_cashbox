@@ -35,6 +35,11 @@ namespace cashboxNet
                 {
                     continue;
                 }
+                if (filedirectoryname.EndsWith(".sh"))
+                {
+                    // Example: run_klangspiel_rechnung2026.sh
+                    continue;
+                }
 
                 RegexpKlangspielRechnung rechnung = RegexpKlangspielRechnung.TryMatch(filedirectoryname);
                 if (rechnung == null)
