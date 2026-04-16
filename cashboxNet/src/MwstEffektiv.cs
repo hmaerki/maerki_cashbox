@@ -215,23 +215,23 @@ A) MWST-Formular (Online) ausfüllen und abschicken
 
   Alle Umsatzangaben sind: NETTO
   Umsatz - Entgelte
-    200: {field200:N0}
+    200: {field200:F2}
   Umsatz - Abzüge
-    221: {field221:N0}
+    221: {field221:F2}
   Umsatz - Kontrolle
-    299: {field299:N0} {Kontrolle}
+    299: {field299:F2} {Kontrolle}
   Steuerberechnung - Satz
-    303: {field299:N0}
-    299: {field299:N0} {Kontrolle}
+    303: {field299:F2}
+    299: {field299:F2} {Kontrolle}
   Steuerberechnung - Total geschuldet
-    399: {N.F(field399rechts)} {Kontrolle}
+    399: {field399rechts:F2} {Kontrolle}
   Steuerberechnung - Vorsteuer
-    400: {N.F(field400)}
-    405: {N.F(field405)}
+    400: {field400:F2}
+    405: {field405:F2}
   Kontrolle:
-    479: {N.F(field479)} {Kontrolle}
-    500: {N.F(field500)} {Kontrolle}
-    510: {N.F(field510)} {Kontrolle}
+    479: {field479:F2} {Kontrolle}
+    500: {field500:F2} {Kontrolle}
+    510: {field510:F2} {Kontrolle}
 
 
 B) Die MWST-Abrechnung mit dem gleichen Filenamen wie dieses File ablegen.
